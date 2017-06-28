@@ -1,6 +1,4 @@
 ---
 - hosts: all
   roles:
-  - role: ansible-role-active-directory
-    ad_domain_name: contoso.com
-    ad_safe_mode_password: FtPX38qhuaHTaTS4CkZ6Fpsgg5wL883N
+  - ansible-role-active-directory
