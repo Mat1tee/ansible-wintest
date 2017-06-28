@@ -1,23 +1,4 @@
 ---
 - hosts: all
-  tasks:
-  - name: Install AD-Domain-Services feature
-    win_feature: >
-      name=AD-Domain-Services
-      include_management_tools=yes
-      include_sub_features=yes
-      state=present
-
-  - name: Promote to domain controller
-    domain_controller: >
-      domain_name=duckshit.com
-      safe_mode_password=fuckleberry
-    register: result
-
-  - name: Reboot upon promotion
-    raw: shutdown /r
-    when: result|changed
-    async: 0
-    poll: 0
-    ignore_errors: true
-
+  roles:
+    - wilsonma.ad-ds-init
