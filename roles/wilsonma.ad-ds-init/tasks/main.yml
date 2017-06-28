@@ -1,8 +1,6 @@
 ---
 # tasks file for wilsonma.ad-ds-init
 - name: Install Active Directory Feature
-  win-feature:
+  win_feature:
     name: AD-Domain-Services
     state: present
-
-
