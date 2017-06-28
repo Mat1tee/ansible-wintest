@@ -5,6 +5,10 @@
     name: AD-Domain-Services
     state: present
 
+- win_domain:
+    dns_domain_name: ansible.test
+    safe_mode_password: password123!
+
 - name: Create Windows Domain Controller
   win_domain_controller:
     dns_domain_name: ansible.test
